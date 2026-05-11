@@ -1,0 +1,62 @@
+package com.mycompany.main;
+import java.util.*;
+public class JogadorSimulacao {
+    
+    private static String nome = "Arthur";
+    private static int idade = 19;
+    private static int energia = 100; 
+    private static boolean emprego = false;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public int getEnergia() {
+        return energia;
+    }
+
+    public boolean isEmprego() {
+        return emprego;
+    }
+    
+   /* public JogadorSimulacao(String nome, int idade, int energia, boolean emprego){
+        
+        this.nome = nome;
+        this.idade = idade;
+        this.energia = energia;
+        this.emprego = emprego;
+    
+    } Construtor pré feito */
+    
+    public void status(){
+      System.out.println("Nome: "+ this.nome);
+      System.out.println("Idade: "+ this.idade);
+      System.out.println("Energia: "+ this.energia);
+      System.out.println("Emprego: "+ this.emprego);
+    
+    }
+
+    public static void setNome(String nome) {
+        JogadorSimulacao.nome = nome;
+    }
+
+    public static void setIdade(int idade) {
+        JogadorSimulacao.idade = idade;
+    }
+
+    public static void setEnergia(int energia) {
+        JogadorSimulacao.energia = energia;
+    }
+
+    public static void setEmprego(boolean emprego) {
+        JogadorSimulacao.emprego = emprego;
+    }
+    
+    
+    
+    
+}

@@ -4,7 +4,6 @@ import java.util.*;
 public class BancoDeEmprego {
     
     private ArrayList<Emprego> vagas;
-    private JogadorSimulacao jogador;
     
     public BancoDeEmprego(){
     
@@ -39,26 +38,6 @@ public class BancoDeEmprego {
         }
         
      return null;
-    }
-    
-    public void marcarEntrevista(){
-        
-        Random rng = new Random();
-        int gerador = rng.nextInt(100) + 1;
-        
-        if(gerador > 50){
-            System.out.println("Parabéns você passou na entrevista, Contratado!!!");
-            jogador.setEmprego(true);
-        }else{
-            System.out.println("Infelizmente você não foi contratado :(");
-        }
-    
-    }
-    
-    public void pedirDemicao(){
-        
-        jogador.setEmprego(false);
-    
     }
     
 }

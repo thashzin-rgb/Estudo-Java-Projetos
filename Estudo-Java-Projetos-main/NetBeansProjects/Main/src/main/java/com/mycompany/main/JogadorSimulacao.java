@@ -1,11 +1,12 @@
 package com.mycompany.main;
-import java.util.*;
+
 public class JogadorSimulacao {
-    
+
     private static String nome = "Arthur";
     private static int idade = 19;
-    private static int energia = 100; 
-    private static boolean emprego = false;
+    private static double energiaAtual = 100;
+    private static Trabalho empregoAtual;
+
 
     public String getNome() {
         return nome;
@@ -15,29 +16,48 @@ public class JogadorSimulacao {
         return idade;
     }
 
-    public int getEnergia() {
-        return energia;
+    public double getenergiaAtual() {
+        return energiaAtual;
     }
 
-    public boolean isEmprego() {
-        return emprego;
+    public Trabalho getEmpregoAtual() {
+    return empregoAtual;
     }
-    
-   /* public JogadorSimulacao(String nome, int idade, int energia, boolean emprego){
+
+    public boolean isEmpregoAtual() {
+        return empregoAtual != null;
+    }
+
+
+
+    /*
+     * public JogadorSimulacao(String nome, int idade, int energia, boolean
+     * emprego){
+     * 
+     * this.nome = nome;
+     * this.idade = idade;
+     * this.energia = energia;
+     * this.emprego = emprego;
+     * 
+     * } Construtor pré feito
+     */
+
+    public void status() {
+
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Energia: " + this.energiaAtual);
         
-        this.nome = nome;
-        this.idade = idade;
-        this.energia = energia;
-        this.emprego = emprego;
-    
-    } Construtor pré feito */
-    
-    public void status(){
-      System.out.println("Nome: "+ this.nome);
-      System.out.println("Idade: "+ this.idade);
-      System.out.println("Energia: "+ this.energia);
-      System.out.println("Emprego: "+ this.emprego);
-    
+
+        if (empregoAtual != null) {
+
+            System.out.println("Emprego: " + empregoAtual.getNome());
+            System.out.println("Salário: " + empregoAtual.getSalario());
+        }else{
+
+            System.out.println("Emprego: Desempregado");
+        }
+
     }
 
     public static void setNome(String nome) {
@@ -48,15 +68,14 @@ public class JogadorSimulacao {
         JogadorSimulacao.idade = idade;
     }
 
-    public static void setEnergia(int energia) {
-        JogadorSimulacao.energia = energia;
+    public static void setEnergia(double energiaAtual) {
+        JogadorSimulacao.energiaAtual = energiaAtual;
     }
 
-    public static void setEmprego(boolean emprego) {
-        JogadorSimulacao.emprego = emprego;
+    public static void setEmpregoAtual(Trabalho emprego) {
+        JogadorSimulacao.empregoAtual = emprego;
     }
-    
-    
-    
-    
+
+
+
 }

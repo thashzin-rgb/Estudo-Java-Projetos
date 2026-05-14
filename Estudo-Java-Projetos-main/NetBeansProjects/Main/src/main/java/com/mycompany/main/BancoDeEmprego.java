@@ -1,26 +1,30 @@
 package com.mycompany.main;
 
-import java.util.*;
+import java.util.ArrayList;
 public class BancoDeEmprego {
     
-    private ArrayList<Emprego> vagas;
+    private ArrayList<Trabalho> vagas;
     
     public BancoDeEmprego(){
     
         vagas = new ArrayList<>();
         
-        vagas.add(new Emprego(1, "Programador", 4000));
-        vagas.add(new Emprego(2, "Repositor", 2500));
-        vagas.add(new Emprego(3, "Vendedor", 3500));
+        vagas.add(new Trabalho(1, "Programador", 4000, 15));
+        vagas.add(new Trabalho(2, "Repositor", 2500, 20));
+        vagas.add(new Trabalho(3, "Vendedor", 3500, 20));
+        vagas.add(new Trabalho(4, "Médico", 5000, 15));
+        vagas.add(new Trabalho(5, "Professor", 3000, 15));
+        
     
     }
     
     /* método para pegar uma lista SÒ dos nomes dos empregos */
-    public ArrayList<String> listarNomesEmpregos(){
+
+    public ArrayList<String> listarNomesTrabalho(){
         
         ArrayList<String> nomes = new ArrayList<>();
     
-        for (Emprego e: vagas){
+        for (Trabalho e: vagas){
         nomes.add(e.getNome());
         
             
@@ -28,16 +32,28 @@ public class BancoDeEmprego {
          return nomes;
     }
     
-    public Emprego buscarPorId(int id){
+    public Trabalho buscarPorId(int id){
     
-        for (Emprego e: vagas){
+        for (Trabalho e: vagas){
         
-         if(e.getIdEmprego() == id){
+         if(e.getIdTrabalho() == id){
              return e;
          }
         }
         
      return null;
     }
+    
+    
+    public void pedirDemissao(JogadorSimulacao jogador){
+        
+       jogador.setEmpregoAtual(null);
+
+       System.out.println("Você pediu demissão");
+    
+    }
+
+    
+    
     
 }
